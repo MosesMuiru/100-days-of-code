@@ -16,6 +16,7 @@ class ReminderServices {
 
     async addReminder(title:string){
         const response = await this.http.post<Reminder>("/todos",{title})
+        
         return response.data
     }
 

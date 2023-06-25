@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import ReminderService from "../services/reminders"
+import { error } from 'console';
 // this is to tell the compiler to return a jsx 
 
 function NewReminder():JSX.Element {
@@ -7,8 +9,20 @@ function NewReminder():JSX.Element {
 
     const submitForm = (e:React.FormEvent)=>{
         e.preventDefault();
-        console.log(title);
+
+        try
+       { ReminderService.addReminder(title);
+        console.log("rirle donex ")
+    
     }
+       catch(err){
+        console.log(err)
+       };
+        console.log(title);
+
+  
+    }
+    // this is weer
 
 
   return (
