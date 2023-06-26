@@ -42,4 +42,3 @@ export default {
   plugins: [],
 }
 //the backgroungImage -- is the background color
-b

@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=IBM+Plex+Mono:wght@700&family=Nunito+Sans:ital,wght@0,200;0,400;0,500;0,700;0,1000;1,800&family=Poppins:wght@800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body,
+#root,
+.app{
+    height: 100%;
+    width: 100%;
+    font-family: "DM Sans",sans;
+    /* the default text color */
+    @apply text-gray-500;
+
+}
