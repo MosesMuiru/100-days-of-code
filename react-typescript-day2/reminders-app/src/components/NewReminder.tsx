@@ -12,7 +12,7 @@ function NewReminder():JSX.Element {
 
         try
        { ReminderService.addReminder(title);
-        console.log("rirle donex ")
+        console.log("rirle donex")
     
     }
        catch(err){
