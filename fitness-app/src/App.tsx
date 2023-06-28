@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from "@/scenes/navbar"
 import SelectedPage from './shared/types'
 
@@ -14,11 +14,31 @@ function App() {
     SelectedPage.Home
   )
 
+  const [isTopOfPage,setIsTopOfPage] = useState<boolean>(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if(window.scrollY === 0) {setIsTopOfPage(true)
+        setSelectedPage(SelectedPage.Home);
+      
+      }
+      if(window.scrollY !== 0) setIsTopOfPage(false)
+    }
+
+    // the ee
+    window.addEventListener("scroll",handleScroll);
+
+    //clean up function whenever one anatoka kwa hio page to prevent memory liks and bugs
+    return () => window.removeEventListener("scroll",handleScroll)
+
+
+  },[])
+
   return (
     <>
     <div className='bg-gray-20'>
 
-      <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+      <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
     </div>
     </>
   )
